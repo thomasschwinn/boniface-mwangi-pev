@@ -47,7 +47,7 @@ export default async function Home() {
     }
   });
   //arr = [...arrWithCol3width];
-  console.log(arrWithCol3width);
+  //console.log(arrWithCol3width);
   // let modaltrigger = false;
   return (
     // <TheDialogWrapper trigger={modaltrigger}>
