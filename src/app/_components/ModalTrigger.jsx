@@ -2,14 +2,25 @@
 import ModalContent from "./ModalContet";
 import { useState } from "react";
 import { createPortal } from "react-dom";
-
-export default function ModalTrigger({ children, className, index, arr }) {
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+export default function ModalTrigger({
+  children,
+  className,
+  index,
+  arr,
+  width,
+  height,
+}) {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
-      <div className={className} onClick={() => setShowModal(true)}>
+      <AspectRatio
+        ratio={width / height}
+        className={className}
+        onClick={() => setShowModal(true)}
+      >
         {children}
-      </div>{" "}
+      </AspectRatio>{" "}
       {showModal &&
         createPortal(
           <ModalContent
